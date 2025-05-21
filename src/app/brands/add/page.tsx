@@ -5,9 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../../../components/ui/card";
-import { Label } from "../../../components/ui/label";
-import { Input } from "../../../components/ui/input";
-import { Button } from "../../../components/ui/button";
+import BrandForm from "./brand-form";
 
 function BrandsAddPage() {
   return (
@@ -17,14 +15,7 @@ function BrandsAddPage() {
           <CardTitle>Agregar Nueva Marca</CardTitle>
         </CardHeader>
         <CardContent>
-          <form>
-            <Label>Marca</Label>
-            <Input />
-            <Label>Descripción</Label>
-            <Input />
-
-            <Button>Agregar Marca</Button>
-          </form>
+          <BrandForm />
         </CardContent>
       </Card>
     </div>

@@ -1,13 +1,19 @@
 // import React from "react";
 "use client";
 
-import { Label } from "../../../components/ui/label";
-import { Input } from "../../../components/ui/input";
-import { Button } from "../../../components/ui/button";
 import { useForm } from "react-hook-form";
-import { addBrand } from "../brands.api";
-import { BrandData } from "../../../interfaces/brand.interface";
+
 import { useRouter } from "next/navigation";
+import { BrandData } from "../../interfaces/brand.interface";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { Button, buttonVariants } from "../ui/button";
+import { addBrand } from "../../app/api/brands.api";
+
+export const metadata = {
+  title: "Agregar Marca",
+  description: "Agregar una nueva marca al sistema",
+};
 
 export function BrandForm() {
   const { register, handleSubmit } = useForm<BrandData>();
@@ -27,7 +33,9 @@ export function BrandForm() {
       <Label>Descripción</Label>
       <Input {...register("description")} />
 
-      <Button className="mt-5">Agregar Marca</Button>
+      <Button className={buttonVariants({ variant: "agregar" })}>
+        Agregar Marca
+      </Button>
     </form>
   );
 }
